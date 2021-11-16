@@ -18,10 +18,10 @@ class ViewController: UIViewController {
         
         print("ViewController - viewDidLoad() called")
         
-        profileImg.layer.cornerRadius = profileImg.frame.height / 2
-        profileChangeBtn.layer.cornerRadius = 10
+        self.profileImg.layer.cornerRadius = self.profileImg.frame.height / 2
+        self.profileChangeBtn.layer.cornerRadius = 10
         
-        profileChangeBtn.addTarget(self, action: #selector(onProfileChangeBtnClicked), for: .touchUpInside)
+        self.profileChangeBtn.addTarget(self, action: #selector(onProfileChangeBtnClicked), for: .touchUpInside)
     }
 
     // 프사 변경 버튼이 클릭되었을때
@@ -30,8 +30,8 @@ class ViewController: UIViewController {
         
         // 카메라 라이브러리 셋팅
         var config = YPImagePickerConfiguration()
-//        config.screens = [.library, .photo, .video]
-        config.screens = [.library]
+        config.screens = [.library, .photo, .video]
+//        config.screens = [.library]
 
         let picker = YPImagePicker(configuration: config)
         
